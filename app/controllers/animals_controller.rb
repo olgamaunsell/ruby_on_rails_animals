@@ -1,7 +1,10 @@
 class AnimalsController < ApplicationController
-
   def index
-    @animals = [ {name: "Tiger", age: "5"}, {name: "Snow Leopard", age: "1"}]
+    @animals = Animal.all
     render :json => @animals
+    # respond_to do |format|
+    #   format.html
+      # format.json{render :json => @animals}
+    # end
   end
 end
